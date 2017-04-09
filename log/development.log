@@ -47,3 +47,154 @@ Migrating to CreateNotes (20170409100336)
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-09 10:03:46 UTC], ["updated_at", 2017-04-09 10:03:46 UTC]]
   [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-09 12:13:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 266ms (Views: 259.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes/new" for 127.0.0.1 at 2017-04-09 12:13:38 +0200
+Processing by NotesController#new as HTML
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.haml (641.7ms)
+  Rendered notes/new.html.haml within layouts/application (643.1ms)
+Completed 200 OK in 682ms (Views: 675.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/notes" for 127.0.0.1 at 2017-04-09 12:14:35 +0200
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fq/9tBpq4O+bVBaQxvjeKxwD6i77Je8xLBATDnMmnB43pfk6PNpp+5WL31XVZP4efkboxqWYxQ4B031WYG1qyg==", "note"=>{"title"=>"This is my first note", "content"=>"1: oaoaoao\r\n2: oaoa\r\n3: 0xa0x0a"}, "commit"=>"Create Note"}
+No template found for NotesController#create, rendering head :no_content
+Completed 204 No Content in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/notes/new" for 127.0.0.1 at 2017-04-09 12:14:45 +0200
+Processing by NotesController#new as HTML
+  Rendering notes/new.html.haml within layouts/application
+  Rendered notes/_form.haml (11.8ms)
+  Rendered notes/new.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/notes" for 127.0.0.1 at 2017-04-09 12:14:46 +0200
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+46HEuYvElJ5xdSQHZ6w3QdHM92a9R5nEFoj/iYV7/DahIOcwJ+bRncaHVUOApDoZQIxNcRINFg9mU2mNV4ZJA==", "note"=>{"title"=>"", "content"=>""}, "commit"=>"Create Note"}
+No template found for NotesController#create, rendering head :no_content
+Completed 204 No Content in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/notes/new" for 127.0.0.1 at 2017-04-09 12:19:04 +0200
+Processing by NotesController#new as HTML
+  Rendering notes/new.haml within layouts/application
+  Rendered notes/_form.haml (4.5ms)
+  Rendered notes/new.haml within layouts/application (5.7ms)
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/notes" for 127.0.0.1 at 2017-04-09 12:19:15 +0200
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v6RBoPhSrWp336jVroDJjvwsndYDQdER4KNP377Nf2eerkUu3uIkfnkAYRC9HOm7nmmfPl38+y7NYCGHrYaJsw==", "note"=>{"title"=>"This is my first note", "content"=>"oaoa oaoao oaaoa"}, "commit"=>"Create Note"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "This is my first note"], ["content", "oaoa oaoao oaaoa"], ["created_at", 2017-04-09 10:19:15 UTC], ["updated_at", 2017-04-09 10:19:15 UTC]]
+  [1m[35m (424.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/notes/1
+Completed 302 Found in 429ms (ActiveRecord: 425.3ms)
+
+
+Started GET "/notes/1" for 127.0.0.1 at 2017-04-09 12:19:15 +0200
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering notes/show.haml within layouts/application
+  Rendered notes/show.haml within layouts/application (1.1ms)
+Completed 200 OK in 42ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes/1" for 127.0.0.1 at 2017-04-09 12:21:55 +0200
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering notes/show.haml within layouts/application
+  Rendered notes/show.haml within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/notes/1" for 127.0.0.1 at 2017-04-09 12:21:56 +0200
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering notes/show.haml within layouts/application
+  Rendered notes/show.haml within layouts/application (1.3ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/notes" for 127.0.0.1 at 2017-04-09 12:21:57 +0200
+Processing by NotesController#index as HTML
+  Rendering notes/index.haml within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  Rendered notes/index.haml within layouts/application (2.4ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes/new" for 127.0.0.1 at 2017-04-09 12:22:14 +0200
+Processing by NotesController#new as HTML
+  Rendering notes/new.haml within layouts/application
+  Rendered notes/_form.haml (5.2ms)
+  Rendered notes/new.haml within layouts/application (6.5ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/notes" for 127.0.0.1 at 2017-04-09 12:22:25 +0200
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k0ZhVoJBxnZqvNDyMxdZQ8F6yPXdCvLksHNq8pN5RX+yTGXYpPFPYmRjGTcgi3l2oz/KHYO32NudsASqgDKzqw==", "note"=>{"title"=>"Another Note", "content"=>"Data modeling for note"}, "commit"=>"Create Note"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Another Note"], ["content", "Data modeling for note"], ["created_at", 2017-04-09 10:22:25 UTC], ["updated_at", 2017-04-09 10:22:25 UTC]]
+  [1m[35m (41.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/notes/2
+Completed 302 Found in 45ms (ActiveRecord: 41.7ms)
+
+
+Started GET "/notes/2" for 127.0.0.1 at 2017-04-09 12:22:25 +0200
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering notes/show.haml within layouts/application
+  Rendered notes/show.haml within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/notes" for 127.0.0.1 at 2017-04-09 12:22:33 +0200
+Processing by NotesController#index as HTML
+  Rendering notes/index.haml within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  Rendered notes/index.haml within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at 2017-04-09 12:23:19 +0200
+Processing by NotesController#index as HTML
+  Rendering notes/index.haml within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  Rendered notes/index.haml within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes/2" for 127.0.0.1 at 2017-04-09 12:23:20 +0200
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering notes/show.haml within layouts/application
+  Rendered notes/show.haml within layouts/application (1.8ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at 2017-04-09 12:23:22 +0200
+Processing by NotesController#index as HTML
+  Rendering notes/index.haml within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY created_at DESC[0m
+  Rendered notes/index.haml within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
